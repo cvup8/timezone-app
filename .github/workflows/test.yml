@@ -1,0 +1,39 @@
+name: E2E Full Regression Tests
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          cd timezone-app
+          npm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run app locally
+        run: npm run dev
+
+      - name: Run full regression tests
+        run: npm run test:full-regression
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: test-results
+          path: timezone-app/test-results
+          retention-days: 30
