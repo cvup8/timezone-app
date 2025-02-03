@@ -25,7 +25,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run app locally
-        run: npm run dev
+        run: |
+          cd timezone-app
+          npm run dev
 
       - name: Run full regression tests
         run: npm run test:full-regression
