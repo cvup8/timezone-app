@@ -26,14 +26,12 @@ export default defineConfig({
       name: "firefox",
       use: { 
         ...devices["Desktop Firefox"],
-        isMobile: false
       },
     },
     {
       name: "webkit",
       use: { 
         ...devices["Desktop Safari"],
-        isMobile: false
       },
     },
     {
@@ -41,15 +39,12 @@ export default defineConfig({
       use: {
         ...devices["Desktop Edge"],
         channel: "msedge",
-        isMobile: false
       },
     },
     {
       name: "Google Chrome",
       use: {
         ...devices["Desktop Chrome"],
-        channel: "chrome",
-        isMobile: false
       },
     },
   ],
