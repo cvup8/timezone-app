@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:sanity-check": "playwright test -project=Google Chrome",
-    "test:full-regression": "playwright test"
+    "test": "playwright test -project=Google Chrome",
+    "test:all-browsers": "playwright test"
   },
   "dependencies": {
     "@types/node": "20.6.0",

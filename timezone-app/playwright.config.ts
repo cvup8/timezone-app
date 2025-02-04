@@ -37,20 +37,6 @@ export default defineConfig({
       },
     },
     {
-      name: "Mobile Chrome",
-      use: { 
-        ...devices["Pixel 5"],
-        isMobile: true
-      },
-    },
-    {
-      name: "Mobile Safari",
-      use: {
-        ...devices["iPhone 12"],
-        isMobile: true
-      },
-    },
-    {
       name: "Microsoft Edge",
       use: {
         ...devices["Desktop Edge"],

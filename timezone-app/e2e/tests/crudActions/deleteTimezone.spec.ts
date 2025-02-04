@@ -8,8 +8,11 @@ test.describe("Delete Timezone", () => {
     const localTimezone = "America/Denver";
     let newTimezoneRow: TimezoneRow
 
+    test.fixme(({ channel }) =>  channel == "msedge", "Need to fix Github Issue #3");
+
     test.use({ timezoneId: localTimezone })
     test.beforeAll(async ({ browser }) => {
+
         page = await browser.newPage();
         homePage = new HomePage(page, localTimezone);
 

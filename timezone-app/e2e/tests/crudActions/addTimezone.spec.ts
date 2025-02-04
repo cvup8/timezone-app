@@ -6,9 +6,10 @@ test.describe("Add Timezone", () => {
     let homePage: HomePage;
     const localTimezone = "America/Denver";
 
-    test.fixme(({ isMobile }) =>  isMobile, "Should fix Github Issue");
+    test.fixme(({ channel }) =>  channel == "msedge", "Need to fix Github Issue #3");
     test.use({ timezoneId: localTimezone })
     test.beforeAll(async ({ browser }) => {
+
         page = await browser.newPage();
         homePage = new HomePage(page, localTimezone);
 
